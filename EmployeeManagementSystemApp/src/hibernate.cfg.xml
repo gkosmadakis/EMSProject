@@ -1,0 +1,22 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE hibernate-configuration PUBLIC
+"-//Hibernate/Hibernate Configuration DTD//EN"
+"http://hibernate.sourceforge.net/hibernate-configuration-3.0.dtd">
+<hibernate-configuration>
+    <session-factory>
+        <property name="hibernate.connection.driver_class">com.mysql.jdbc.Driver</property>
+       <!--   <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/homeinsurancedb?autoReconnect=true&amp;useSSL=false</property>-->
+       <property name="hibernate.connection.url">jdbc:mysql://localhost:3306/emsdb?useUnicode=true&amp;useJDBCCompliantTimezoneShift=true&amp;useLegacyDatetimeCode=false&amp;serverTimezone=UTC</property>
+        <property name="hibernate.connection.username">root</property>
+        <property name="hibernate.connection.password">qaz911985!</property>
+        <property name="dialect">org.hibernate.dialect.MySQL5Dialect</property>
+        <property name="show_sql">true</property>
+        <property name="hibernate.hbm2ddl.auto">update</property>
+<!--         <mapping resource="Employee.hbm.xml" /> -->
+<!--         <mapping resource="emp.hbm.xml" /> -->
+        <mapping class="com.ems.model.Employee"/> 
+        <mapping class="com.ems.model.Department"/> 
+        <mapping class="com.ems.model.RegulationDetail"/> 
+        <mapping class="com.ems.model.RegulationAnalysis"/> 
+    </session-factory>
+</hibernate-configuration>
